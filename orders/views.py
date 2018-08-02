@@ -45,13 +45,13 @@ def logout_view(request):
     return render(request, "pinocchios/index.html", {"message": "Logged out."})
 
 
-# # the dash bord view
-# def dash_view(request):
-#     context = {
-#         "pizza": Pizza.objects.all()
-#         "sub": Sub.objects.all()
-#         "toppings": Topping.objects.all()
-#         "salad": Salad.objects.all()
-#         "dinnerplate": DinnerPlate.objects.all()
-#     }
-#     return render(request, "pinocchios/dash.html", context)
+# the dash bord view
+def dash_view(request):
+    context = {
+        "pizza": Pizza.objects.all()
+        "sub": Sub.objects.all()
+        "toppings": Topping.objects.all()
+        "salad": Salad.objects.all()
+        "dinnerplate": DinnerPlate.objects.all()
+    }
+    return render(request, "pinocchios/dash.html", context)
