@@ -1,0 +1,15 @@
+{% extends 'pinocchios/base.html' %}
+
+{% block body%}
+{% if error %}
+{{ error }}
+{% endif %}
+<form method="post" action="{% url 'index' %}">
+{% csrf_token %}
+<input type=text placeholder="username" name="name">
+<input type=password placeholder="Password" name="password">
+<input type="submit" value="login">
+
+
+<a href="{% url 'signup'%}">click here to signup</a>
+{% endblock %}

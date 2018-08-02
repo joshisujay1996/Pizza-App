@@ -1,0 +1,12 @@
+{% extends 'pinocchios/base.html' %}
+
+{% block body%}
+<form method=post action="{% url 'signup' %}">
+  {% csrf_token %}
+<input type="text" name="name" placeholde="username">
+<input type="text" name="email" placeholde="Email">
+<input type="text" name="password1" placeholde="Password">
+<input type="text" name="password2" placeholde="Password Again">
+<input type="submit" value="signup">
+
+{% endblock %}

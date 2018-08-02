@@ -1,0 +1,63 @@
+{% extends 'pinocchios/base.html' %}
+
+{% block content %}
+  <h2>Welcome, {{ user.username }}!</h2>
+  <ul>
+    <li>Currently logged in as: {{ user.username }}</li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+</ul>
+<h1> menu here below</h1>
+
+<h3>Pizza</h3>
+  <ul>
+      {% for pizzas in pizza %}
+      <li id="m1"><a href="">{{ pizzas }}</a></li>
+      {% endfor %}
+    </ul>
+
+<h3>Sub</h3>
+  <ul>
+      {% for subs in sub %}
+      <li id="m2"><a href="">{{ subs }}</a></li>
+      {% endfor %}
+      </ul>
+
+<h3>Salad</h3>
+  <ul>
+   {% for salads in salad %}
+    <li id="m3"><a href="">{{ salads }}</a></li>
+    {% endfor %}
+      </ul>
+
+<h3>DinnerPlate</h3>
+    <ul>
+      {% for dinnerplates in dinnerplate %}
+      <li id="m4"><a href="">{{ dinnerplate }}</a></li>
+      {% endfor %}
+        </ul>
+
+
+<a href="{% url 'orders' %}"> checkout</a>
+
+        <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            int price=0;
+            while(1){
+              document.querySelector('m1').onclick = () => {
+                  price = price + document.querySelector('m1').value;
+                }
+              document.querySelector('m2').onclick = () => {
+                    price = price + document.querySelector('m1').value;
+                  }
+              document.querySelector('m3').onclick = () => {
+                      price = price + document.querySelector('m1').value;
+                    }
+              document.querySelector('m3').onclick = () => {
+                        price = price + document.querySelector('m1').value;
+                      }
+        }
+        localStorage.setItem('price',price);
+      });
+        </script>
+{% endblock %}
