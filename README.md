@@ -1,4 +1,4 @@
-# Project 3
+# Pizza App
 
 Web Programming with Python and JavaScript
 initiall in the models file i have added all the items in such a way that the admin can modify in shell or the django admin thing, next teh menu has been created.
